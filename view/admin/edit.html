@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>page get id</title>
+		<!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+		<link type="text/css" rel="stylesheet" href="{$url_base}public/css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="{$url_base}public/css/samane.css"/>
+		<style>
+			h1{ 
+				color: #40007d;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="{$url_base}public/image/logo.jpg" class="resize" />
+		<div class="nav navbar navbar-default navbar-fixed-top">
+			<ul class="nav navbar-nav">
+				<!-- l'appel de {$url_base} vous permet de recupérer le chemin de votre site web  -->
+				<li><a href="{$url_base}Admin/index">Accueil</a></li>
+				<li><a href="{$url_base}Admin/liste">Liste des admin</a></li>
+			</ul>
+		</div>
+		<div class="col-md-8 col-xs-12 col-md-offset-2" style="margin-top:150px;">
+			<div class="panel panel-info">
+				<div class="panel-heading">ADMIN</div>
+				<div class="panel-body">
+					<form method="post" action="{$url_base}Admin/update">
+						<div class="form-group">
+							<label class="control-label">ID</label>
+							<input class="form-control" type="text" name="id" id="id" value="{if isset($test)} {$test['id']} {/if}"/>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Nom</label>
+							<input class="form-control" type="text" name="nom" id="nom" value="{if isset($test)} {$test['nom']} {/if}"/>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Prénom</label>
+							<input class="form-control" type="text" name="prenom" id="prenom" value="{if isset($test)} {$test['prenom']} {/if}"/>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Login</label>
+							<input class="form-control" type="text" name="login" id="login" value="{if isset($test)} {$test['login']} {/if}"/>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Password</label>
+							<input class="form-control" type="text" name="password" id="password" value="{if isset($test)} {$test['password']} {/if}"/>
+						</div>
+
+						<div class="form-group">
+							<input class="btn btn-success" type="submit" name="modifier" value="Modifier"/>
+							<a class="btn btn-primary" href="{$url_base}Admin/liste">Retour</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
